@@ -1,84 +1,314 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Naga Ai | Cyberpunk v1.1</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
-        *{margin:0;padding:0;box-sizing:border-box;}
-        body{
-            font-family:'Orbitron',monospace;
-            background:#000;color:#fff;
-            overflow:hidden;
-            height:100vh;
-            position:relative;
-        }
-        /* ===== SPLASH 🚀 + MATRIX RAIN ===== */
-        #splash{
-            position:fixed;inset:0;z-index:9999;
-            background:#000;
-            display:flex;align-items:center;justify-content:center;
-            animation:fadeOut 1.5s ease 2.5s forwards;
-        }
-        @keyframes fadeOut{to{opacity:0;visibility:hidden;}}
-        .rocket{
-            font-size:100px;
-            animation:launch 2s ease-out infinite alternate;
-            filter:drop-shadow(0 0 20px #00ffff)drop-shadow(0 0 40px #ff00ff);
-        }
-        @keyframes launch{
-            0%{transform:translateY(0) scale(1);}
-            100%{transform:translateY(-150px) scale(1.2);}
-        }
-        #particles{
-            position:fixed;top:0;left:0;width:100%;height:100%;z-index:1;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToxicAvenger Login⚡</title>
 
-        /* ===== LOGIN CARD ===== */
-        .card{
-            position:relative;z-index:10;
-            background:rgba(0,0,0,.75);
-            backdrop-filter:blur(15px);
-            border:1px solid rgba(0,255,255,.4);
-            border-radius:20px;
-            padding:40px 30px;
-            max-width:420px;width:90%;
-            margin:auto;
-            box-shadow:0 0 40px rgba(0,255,255,.35),
-                       inset 0 0 20px rgba(0,255,255,.1);
-            animation:fadeIn 1s ease-out;
-        }
-        @keyframes fadeIn{
-            from{opacity:0;transform:translateY(30px);}
-            to{opacity:1;transform:translateY(0);}
-        }
-        h2{text-align:center;margin-bottom:25px;font-size:26px;font-weight:900;}
-        .neon{text-shadow:0 0 5px #00ffff,0 0 10px #00ffff,0 0 20px #00ffff;}
-        .neon-pink{text-shadow:0 0 5px #ff00ff,0 0 10px #ff00ff,0 0 20px #ff00ff;}
-        label{display:block;margin:12px 0 6px;font-size:12px;color:#00ffff;letter-spacing:1px;}
-        input,select{
-            width:100%;padding:12px 15px;
-            background:rgba(0,0,0,.6);
-            border:1px solid rgba(0,255,255,.5);
-            border-radius:8px;color:#fff;
-            font-family:'Orbitron',monospace;font-size:14px;
-            transition:.3s;
-        }
-        input:focus,select:focus{outline:none;border-color:#ff00ff;box-shadow:0 0 15px rgba(255,0,255,.5);}
-        button{
-            width:100%;padding:14px;margin-top:20px;
-            background:linear-gradient(45deg,#00ffff,#ff00ff);
-            border:none;border-radius:8px;color:#000;
-            font-family:'Orbitron',monospace;font-size:16px;font-weight:700;
-            cursor:pointer;transition:.3s;letter-spacing:1px;
-            position:relative;overflow:hidden;
-        }
-        button::after{
-            content:'';
-            position:absolute;top:50%;left:50%;
-            width:0;height:0;
-            background:rgba(255,255,255,.5);
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=Nosifer&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: radial-gradient(circle at center, #080808, #000);
+      color: #ccc;
+      font-family: 'UnifrakturCook', cursive;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    #preloader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    .loader-bar {
+      width: 200px;
+      height: 6px;
+      background: rgba(150, 0, 200, 0.15);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 0 20px rgba(150, 0, 200, 0.3);
+    }
+
+    .loader-bar::before {
+      content: "";
+      position: absolute;
+      top: 0; left: -50%;
+      width: 50%; height: 100%;
+      background: linear-gradient(90deg, transparent, #b000ff, transparent);
+      animation: moveBar 1.3s infinite;
+    }
+
+    @keyframes moveBar {
+      0% { left: -50%; }
+      50% { left: 100%; }
+      100% { left: -50%; }
+    }
+
+    #preloader h2 {
+      font-family: 'Nosifer', cursive;
+      color: #b000ff;
+      font-size: 20px;
+      text-shadow: 0 0 15px #8000ff;
+      margin-top: 20px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(100,0,150,0.25), transparent 70%);
+      animation: fog 20s infinite linear;
+      z-index: 0;
+    }
+
+    @keyframes fog {
+      0%   { transform: translate(0,0); }
+      50%  { transform: translate(60px,40px); }
+      100% { transform: translate(0,0); }
+    }
+
+    .profile {
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+      display: none;
+    }
+
+    .profile img {
+      width: 180px;
+      height: 180px;
+      border-radius: 20px;
+      border: 3px solid #222;
+      box-shadow: 0 0 30px rgba(150, 0, 200, 0.7);
+    }
+
+    .title {
+      font-size: 38px;
+      font-family: 'Nosifer', cursive;
+      color: #eee;
+      margin-bottom: 10px;
+      text-shadow: 0 0 12px rgba(160, 0, 200, 0.7);
+      animation: glitch 2.5s infinite;
+      z-index: 1;
+      display: none;
+    }
+
+    @keyframes glitch {
+      0%   { text-shadow: 2px 0 red, -2px 0 blue; }
+      25%  { text-shadow: -2px 0 lime, 2px 0 purple; }
+      50%  { text-shadow: 2px 0 cyan, -2px 0 magenta; }
+      75%  { text-shadow: -1px -1px red, 1px 1px blue; }
+      100% { text-shadow: 0 0 12px rgba(160,0,200,0.6); }
+    }
+
+    .subtitle {
+      font-size: 13px;
+      font-family: Arial, sans-serif;
+      color: #777;
+      margin-bottom: 30px;
+      text-shadow: 0 0 6px rgba(120,0,200,0.4);
+      display: none;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 20px;
+      width: 100%;
+      max-width: 340px;
+      z-index: 1;
+      display: none;
+    }
+
+    .form-group i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #888;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px 14px 14px 40px;
+      border: 2px solid transparent;
+      border-radius: 30px;
+      background: #0d0d0d;
+      color: #eee;
+      font-size: 15px;
+      font-weight: 500;
+      box-shadow: inset 0 0 12px rgba(60,0,100,0.6);
+      transition: all 0.3s ease;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #9000ff;
+      box-shadow: 0 0 15px rgba(150,0,200,0.7), inset 0 0 16px rgba(50,50,50,0.6);
+    }
+
+    button {
+      width: 100%;
+      max-width: 340px;
+      padding: 14px;
+      font-size: 16px;
+      background: linear-gradient(135deg, #200020, #0a0a0a);
+      color: #ddd;
+      font-weight: 600;
+      border: 2px solid #9000ff;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      text-shadow: 0 0 8px rgba(140,0,200,0.6);
+      position: relative;
+      overflow: hidden;
+      display: none;
+    }
+
+    button::after {
+      content: "";
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(160,0,240,0.3), transparent);
+      transition: left 0.4s ease;
+    }
+
+    button:hover::after { left: 100%; }
+    button:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 22px rgba(180,0,255,0.6);
+    }
+
+    .buy-access {
+      margin-top: 20px;
+      display: inline-block;
+      font-size: 14px;
+      padding: 10px 20px;
+      color: #aaa;
+      border-radius: 25px;
+      border: 2px solid #7000aa;
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      transition: all 0.3s ease;
+      display: none;
+    }
+
+    .buy-access:hover {
+      background: #200020;
+      color: #fff;
+      border-color: #a000ff;
+      box-shadow: 0 0 18px rgba(150,0,200,0.6);
+      transform: scale(1.05);
+    }
+
+    .toast {
+      position: absolute;
+      bottom: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(20,0,40,0.9);
+      color: #ccc;
+      padding: 12px 20px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 0 12px rgba(140,0,200,0.6);
+      opacity: 0;
+      animation: fadeInOut 3.8s ease forwards;
+      z-index: 10;
+    }
+
+    @keyframes fadeInOut {
+      0%   { opacity: 0; transform: translate(-50%,20px); }
+      10%  { opacity: 1; transform: translate(-50%,0); }
+      90%  { opacity: 1; }
+      100% { opacity: 0; transform: translate(-50%,20px); }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="preloader">
+    <div class="loader-bar"></div>
+    <h2>Loading...</h2>
+  </div>
+  
+  <div class="profile">
+    <img src="https://files.catbox.moe/4k6fp8.jpg" alt="Profile">
+  </div>
+  <div class="title">Toxic Avenger</div>
+  <div class="subtitle">4.0 ʙᴇᴛᴀ_</div>
+
+  <form method="POST" action="/auth">
+    <div class="form-group">
+      <i class="fas fa-user"></i>
+      <input type="text" name="username" placeholder="Username" required />
+    </div>
+    <div class="form-group">
+      <i class="fas fa-key"></i>
+      <input type="password" name="key" placeholder="Password" required />
+    </div>
+    <button type="submit" style="font-family: 'Nosifer', cursive;">
+      <i class="fas fa-skull" style="margin-right: 8px;"></i>
+      L O G I N
+      <i class="fas fa-skull" style="margin-left: 8px;"></i>
+    </button>
+  </form>
+
+  <a class="buy-access" href="https://t.me/Izalmodz" target="_blank">
+    <i class="fas fa-mask"></i> Buy Key Access
+  </a>
+  
+  <div id="toast" class="toast" style="display:none;"></div>
+
+  <script>
+    window.onload = function () {
+      setTimeout(function () {
+        document.getElementById("preloader").style.display = "none";
+        document.querySelector(".profile").style.display = "block";
+        document.querySelector(".title").style.display = "block";
+        document.querySelector(".subtitle").style.display = "block";
+        document.querySelectorAll(".form-group").forEach(el => el.style.display = "block");
+        document.querySelector("button").style.display = "block";
+        document.querySelector(".buy-access").style.display = "inline-block";
+      }, 5000);
+    };
+    
+    const params = new URLSearchParams(window.location.search);
+    const msg = params.get("msg");
+    if (msg) {
+      const toast = document.getElementById("toast");
+      toast.textContent = msg;
+      toast.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>            background:rgba(255,255,255,.5);
             border-radius:50%;
             transform:translate(-50%,-50%);
             transition:width .4s,height .4s;
